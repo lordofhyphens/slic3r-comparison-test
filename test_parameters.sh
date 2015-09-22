@@ -13,6 +13,7 @@ for z in 10; do
 					perim=$(grep "perimeter$" boxtest-${x}.${y}.${z}_$infill-${slicer}.gcode | awk ' { print $4 } ' | cut -c2- | paste -sd+ - | bc)
 					u_infill="$(grep "infill$" boxtest-${x}.${y}.${z}_$infill-${slicer}.gcode | awk ' { print $4 } ' | cut -c2- | paste -sd+ - | bc)"
 					echo "$x,$y,$z,$infill,$slicer,$perim,$u_infill,$total" >> output.csv
+					rm  boxtest-${x}.${y}.${z}_$infill-${slicer}.gcode
 				done
 			done
 		done
