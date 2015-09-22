@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "X,Y,Z,infill%,perimeter width, slicer,perimeter filament used , marked infill used, total filament reported used" > output.csv
-for permwidth in 0.4 0.5 auto; do
+for permwidth in 0.4 0.5 `seq 0.6 0.05 1` auto; do
 	for z in 10; do
 		for y in 100; do
 			for x in `seq 1 0.1 2`; do
